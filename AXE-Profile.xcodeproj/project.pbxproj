@@ -1,0 +1,174 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28E5B9F721A8224300EE3592 /* AXE-Profile.instrpkg in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B9F621A8224300EE3592 /* AXE-Profile.instrpkg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		282E866721B487D70075DBC0 /* target-netstat-moduler.clp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.clips; path = "target-netstat-moduler.clp"; sourceTree = "<group>"; };
+		28E5B9F321A8224300EE3592 /* AXE-Profile.instrdst */ = {isa = PBXFileReference; explicitFileType = com.apple.instruments.instrdst; includeInIndex = 0; path = "AXE-Profile.instrdst"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28E5B9F621A8224300EE3592 /* AXE-Profile.instrpkg */ = {isa = PBXFileReference; lastKnownFileType = "com.apple.instruments.package-definition"; path = "AXE-Profile.instrpkg"; sourceTree = "<group>"; };
+		28E5B9FB21A8246400EE3592 /* target-process-moduler.clp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.clips; path = "target-process-moduler.clp"; sourceTree = "<group>"; };
+		28E5B9FD21A9003B00EE3592 /* AXE.tracetemplate */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = AXE.tracetemplate; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		28E5B9EC21A8224300EE3592 = {
+			isa = PBXGroup;
+			children = (
+				28E5B9F521A8224300EE3592 /* AXE-Profile */,
+				28E5B9F421A8224300EE3592 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28E5B9F421A8224300EE3592 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28E5B9F321A8224300EE3592 /* AXE-Profile.instrdst */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28E5B9F521A8224300EE3592 /* AXE-Profile */ = {
+			isa = PBXGroup;
+			children = (
+				282E866721B487D70075DBC0 /* target-netstat-moduler.clp */,
+				28E5B9FD21A9003B00EE3592 /* AXE.tracetemplate */,
+				28E5B9FB21A8246400EE3592 /* target-process-moduler.clp */,
+				28E5B9F621A8224300EE3592 /* AXE-Profile.instrpkg */,
+			);
+			path = "AXE-Profile";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28E5B9F221A8224300EE3592 /* AXE-Profile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28E5B9F821A8224300EE3592 /* Build configuration list for PBXNativeTarget "AXE-Profile" */;
+			buildPhases = (
+				28E5B9F121A8224300EE3592 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AXE-Profile";
+			productName = "AXE-Profile";
+			productReference = 28E5B9F321A8224300EE3592 /* AXE-Profile.instrdst */;
+			productType = "com.apple.product-type.instruments-package";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28E5B9ED21A8224300EE3592 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "罗贤明";
+				TargetAttributes = {
+					28E5B9F221A8224300EE3592 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 28E5B9F021A8224300EE3592 /* Build configuration list for PBXProject "AXE-Profile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 28E5B9EC21A8224300EE3592;
+			productRefGroup = 28E5B9F421A8224300EE3592 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28E5B9F221A8224300EE3592 /* AXE-Profile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28E5B9F121A8224300EE3592 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28E5B9F721A8224300EE3592 /* AXE-Profile.instrpkg in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		28E5B9EE21A8224300EE3592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		28E5B9EF21A8224300EE3592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		28E5B9F921A8224300EE3592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFCHE8E9A8;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
+				INSTRUMENTS_PACKAGE_BUILDER_LINKED_PACKAGES = "ActivityMonitor Energy ktrace Networking Sampling IOKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Debug;
+		};
+		28E5B9FA21A8224300EE3592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFCHE8E9A8;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
+				INSTRUMENTS_PACKAGE_BUILDER_LINKED_PACKAGES = "ActivityMonitor Energy ktrace Networking Sampling IOKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28E5B9F021A8224300EE3592 /* Build configuration list for PBXProject "AXE-Profile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28E5B9EE21A8224300EE3592 /* Debug */,
+				28E5B9EF21A8224300EE3592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28E5B9F821A8224300EE3592 /* Build configuration list for PBXNativeTarget "AXE-Profile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28E5B9F921A8224300EE3592 /* Debug */,
+				28E5B9FA21A8224300EE3592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28E5B9ED21A8224300EE3592 /* Project object */;
+}

@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+	<id>org.axe.AXE-Profile</id>
+    <version>0.1.0</version>
+	<title>AXE-Profile</title>
+	<owner>
+		<name>罗贤明</name>
+	</owner>
+    <import-schema>core-animation-fps-estimate</import-schema>
+    <import-schema>sysmon-process</import-schema>
+    <import-schema>network-connection-stat</import-schema>
+    <interval-schema>
+        <id>axe-sysmon-process-target</id>
+        <title>axe-sysmon-process-target</title>
+        <note>Raw Process Statistic Update:Statistic update message of a raw process which we profiled .</note>
+        <attribute>
+            <name>target-pid</name>
+            <note>标记target-id</note>
+            <value-pattern>.*</value-pattern>
+        </attribute>
+        <start-column>
+            <mnemonic>time</mnemonic>
+            <title>Sample Time</title>
+            <type>start-time</type>
+        </start-column>
+        <duration-column>
+            <mnemonic>period</mnemonic>
+            <title>Period</title>
+            <type>duration</type>
+        </duration-column>
+        <column>
+            <mnemonic>process</mnemonic>
+            <title>Process Name</title>
+            <type>process</type>
+        </column>
+        <column>
+            <mnemonic>recently-died</mnemonic>
+            <title>Process Recently Died</title>
+            <type>boolean</type>
+        </column>
+        <column>
+            <mnemonic>arch-kind</mnemonic>
+            <title>Kind</title>
+            <type>cpu-arch-name</type>
+        </column>
+        <column>
+            <mnemonic>sudden-termination</mnemonic>
+            <title>Sudden Termination</title>
+            <type>boolean</type>
+        </column>
+        <column>
+            <mnemonic>sandbox</mnemonic>
+            <title>Sandbox</title>
+            <type>boolean</type>
+        </column>
+        <column>
+            <mnemonic>restricted</mnemonic>
+            <title>Restricted</title>
+            <type>boolean</type>
+        </column>
+        <column>
+            <mnemonic>app-nap</mnemonic>
+            <title>App Nap</title>
+            <type>boolean</type>
+        </column>
+        <column>
+            <mnemonic>context-switch</mnemonic>
+            <title>Context Switch</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>cpu-percent</mnemonic>
+            <title>% CPU</title>
+            <type>system-cpu-percent</type>
+        </column>
+        <column>
+            <mnemonic>cpu-total-system</mnemonic>
+            <title>System Time</title>
+            <type>duration-on-core</type>
+        </column>
+        <column>
+            <mnemonic>cpu-total-user</mnemonic>
+            <title>User Time</title>
+            <type>duration-on-core</type>
+        </column>
+        <column>
+            <mnemonic>disk-bytes-read</mnemonic>
+            <title>Disk Reads (B)</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>disk-bytes-written</mnemonic>
+            <title>Disk Writes (B)</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>faults</mnemonic>
+            <title>Faults</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>interrupt-wakeups</mnemonic>
+            <title>Interrupt Wake Ups</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>mach-port-count</mnemonic>
+            <title>Mach Ports</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>memory-physical-footprint</mnemonic>
+            <title>Memory</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>memory-anonymous</mnemonic>
+            <title>Anonymous Mem</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>memory-compressed</mnemonic>
+            <title>Compressed Mem</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>memory-purgeable</mnemonic>
+            <title>Purgeable Mem</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>memory-real-private</mnemonic>
+            <title>Real Private Mem</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>memory-real-shared</mnemonic>
+            <title>Real Shared Mem</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>memory-resident-size</mnemonic>
+            <title>Resident Size</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>memory-virtual-size</mnemonic>
+            <title>Virtual Size</title>
+            <type>size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>msg-received</mnemonic>
+            <title>Msg Received</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>msg-sent</mnemonic>
+            <title>Msg Sent</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>pgid</mnemonic>
+            <title>Group ID</title>
+            <type>process-gid</type>
+        </column>
+        <column>
+            <mnemonic>ppid</mnemonic>
+            <title>Parent PID</title>
+            <type>pid</type>
+        </column>
+        <column>
+            <mnemonic>pid</mnemonic>
+            <title>Process ID</title>
+            <type>pid</type>
+        </column>
+        <column>
+            <mnemonic>proc-status</mnemonic>
+            <title>Process Status</title>
+            <type>process-status-name</type>
+        </column>
+        <column>
+            <mnemonic>responsible-pid</mnemonic>
+            <title>Responsible PID</title>
+            <type>pid</type>
+        </column>
+        <column>
+            <mnemonic>sys-calls-mach</mnemonic>
+            <title>Sys Calls Mach</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>sys-calls-unix</mnemonic>
+            <title>Sys Calls Unix</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>thread-count</mnemonic>
+            <title>Threads</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>uid</mnemonic>
+            <title>User Name</title>
+            <type>process-uid</type>
+        </column>
+        <column>
+            <mnemonic>vm-page-ins</mnemonic>
+            <title>Page Ins</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>parent-process</mnemonic>
+            <title>Parent Process</title>
+            <type>process</type>
+        </column>
+        <column>
+            <mnemonic>responsible-process</mnemonic>
+            <title>Responsible Process</title>
+            <type>process</type>
+        </column>
+    </interval-schema>
+    <interval-schema>
+        <id>axe-network-connection-stat</id>
+        <title>axe-network-connection-stat</title>
+        <note>Raw Process Statistic Update:Statistic update message of a raw process which we profiled .</note>
+        <attribute>
+            <name>target-pid</name>
+            <note>标记target-id</note>
+            <value-pattern>.*</value-pattern>
+        </attribute>
+        <start-column>
+            <mnemonic>start-time</mnemonic>
+            <title>Sample Time</title>
+            <type>start-time</type>
+        </start-column>
+        <duration-column>
+            <mnemonic>duration</mnemonic>
+            <title>Interval</title>
+            <type>duration</type>
+        </duration-column>
+        
+        <column>
+            <mnemonic>connection-serial</mnemonic>
+            <title>Connection Serial Number</title>
+            <type>uint32</type>
+        </column>
+        <column>
+            <mnemonic>process</mnemonic>
+            <title>Owner</title>
+            <type>process</type>
+        </column>
+        <column>
+            <mnemonic>interface</mnemonic>
+            <title>Network Interface</title>
+            <type>network-interface</type>
+        </column>
+        <column>
+            <mnemonic>protocol</mnemonic>
+            <title>Protocol</title>
+            <type>network-protocol</type>
+        </column>
+        <column>
+            <mnemonic>local-address</mnemonic>
+            <title>Local</title>
+            <type>sockaddr</type>
+        </column>
+        <column>
+            <mnemonic>remote-address</mnemonic>
+            <title>Remote</title>
+            <type>sockaddr</type>
+        </column>
+        <column>
+            <mnemonic>description</mnemonic>
+            <title>Connection</title>
+            <type>formatted-label</type>
+        </column>
+        <column>
+            <mnemonic>rx-packets</mnemonic>
+            <title>Packets In</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>rx-bytes</mnemonic>
+            <title>Bytes In</title>
+            <type>network-size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>tx-packets</mnemonic>
+            <title>Packets Out</title>
+            <type>event-count</type>
+        </column>
+        <column>
+            <mnemonic>tx-bytes</mnemonic>
+            <title>Bytes Out</title>
+            <type>network-size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>rx-dups</mnemonic>
+            <title>Dups Received</title>
+            <type>network-size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>rx-ooo</mnemonic>
+            <title>Out-of-order</title>
+            <type>network-size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>tx-retx</mnemonic>
+            <title>Retransmitted</title>
+            <type>network-size-in-bytes</type>
+        </column>
+        <column>
+            <mnemonic>min-rtt</mnemonic>
+            <title>Min. Round Trip Time</title>
+            <type>duration</type>
+        </column>
+        <column>
+            <mnemonic>average-rtt</mnemonic>
+            <title>Average Round Trip Time</title>
+            <type>duration</type>
+        </column>
+    </interval-schema>
+    <modeler>
+        <id>axe-target-process-moduler</id>
+        <title>axe-target-process-moduler</title>
+        <purpose>从 sysmon-process 获得当前测试的应用的信息，以用于展示该应用的简易CPU、内存、磁盘读写情况。</purpose>
+        <production-system>
+            <rule-path>./target-process-moduler.clp</rule-path>
+        </production-system>
+        <instance-parameter>?target-pid</instance-parameter>
+        <output>
+            <schema-ref>axe-sysmon-process-target</schema-ref>
+            <when>
+                <attribute>
+                    <name>target-pid</name>
+                    <binds-parameter>?target-pid</binds-parameter>
+                </attribute>
+            </when>
+            <required-input>
+                <schema-ref>sysmon-process</schema-ref>
+            </required-input>
+        </output>
+    </modeler>
+    <modeler>
+        <id>axe-network-stat-moduler</id>
+        <title>axe-network-stat-moduler</title>
+        <purpose>从 network-connection-stat 获得当前测试的应用的信息，当前10.1版本的Instruments没有正确过滤其他应用的网络请求。</purpose>
+        <production-system>
+            <rule-path>./target-netstat-moduler.clp</rule-path>
+        </production-system>
+        <instance-parameter>?target-pid</instance-parameter>
+        <output>
+            <schema-ref>axe-network-connection-stat</schema-ref>
+            <when>
+                <attribute>
+                    <name>target-pid</name>
+                    <binds-parameter>?target-pid</binds-parameter>
+                </attribute>
+            </when>
+            <required-input>
+                <schema-ref>network-connection-stat</schema-ref>
+                <attribute>
+                    <name>target-pid</name>
+                    <parameter-ref>?target-pid</parameter-ref>
+                </attribute>
+            </required-input>
+        </output>
+    </modeler>
+    <instrument>
+        <id>org.axe.instruments.system</id>
+        <title>AXE Activity Monitor</title>
+        <category>System</category>
+        <purpose>展示当前应用的基础的 CPU、内存、磁盘读写等状况</purpose>
+        <icon>Activity Monitor</icon>
+        <import-parameter>
+            <from-scope>trace</from-scope>
+            <name>?target-pid</name>
+        </import-parameter>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+        <create-table>
+            <id>sysmon-process-target-table</id>
+            <schema-ref>axe-sysmon-process-target</schema-ref>
+            <attribute>
+                <name>target-pid</name>
+                <parameter-ref>?target-pid</parameter-ref>
+            </attribute>
+        </create-table>
+        <graph>
+            <title>Activity Monitor</title>
+            <lane>
+                <title>CPU</title>
+                <table-ref>sysmon-process-target-table</table-ref>
+                <plot>
+                    <best-for-resolution>minutes</best-for-resolution>
+                    <value-from>cpu-percent</value-from>
+                    <label-from>cpu-percent</label-from>
+                </plot>
+            </lane>
+            <lane>
+                <title>Memory</title>
+                <table-ref>sysmon-process-target-table</table-ref>
+                <plot>
+                    <best-for-resolution>minutes</best-for-resolution>
+                    <value-from>memory-physical-footprint</value-from>
+                    <label-from>memory-physical-footprint</label-from>
+                </plot>
+            </lane>
+            <lane>
+                <title>Disk Read</title>
+                <table-ref>sysmon-process-target-table</table-ref>
+                <plot>
+                    <best-for-resolution>minutes</best-for-resolution>
+                    <value-from>disk-bytes-read</value-from>
+                    <label-from>disk-bytes-read</label-from>
+                </plot>
+            </lane>
+            <lane>
+                <title>Disk Write</title>
+                <table-ref>sysmon-process-target-table</table-ref>
+                <plot>
+                    <best-for-resolution>minutes</best-for-resolution>
+                    <value-from>disk-bytes-written</value-from>
+                    <label-from>disk-bytes-written</label-from>
+                </plot>
+            </lane>
+        </graph>
+        <list>
+            <title>CPU</title>
+            <table-ref>sysmon-process-target-table</table-ref>
+            <column>time</column>
+            <column>period</column>
+            <column>process</column>
+            <column>cpu-percent</column>
+            <column>cpu-total-system</column>
+            <column>cpu-total-user</column>
+        </list>
+        <list>
+            <title>Memory</title>
+            <table-ref>sysmon-process-target-table</table-ref>
+            <column>time</column>
+            <column>period</column>
+            <column>memory-physical-footprint</column>
+            <column>memory-anonymous</column>
+            <column>memory-compressed</column>
+            <column>memory-purgeable</column>
+            <column>memory-real-private</column>
+            <column>memory-real-shared</column>
+            <column>memory-resident-size</column>
+            <column>memory-virtual-size</column>
+        </list>
+        <list>
+            <title>Disk</title>
+            <table-ref>sysmon-process-target-table</table-ref>
+            <column>time</column>
+            <column>period</column>
+            <column>disk-bytes-read</column>
+            <column>disk-bytes-written</column>
+        </list>
+    </instrument>
+    <instrument>
+        <id>org.axe.instruments.network</id>
+        <title>AXE Network Statistics</title>
+        <category>System</category>
+        <purpose>监控应用的流量情况，监控流量的上传和下载情况。</purpose>
+        <icon>Network</icon>
+        <import-parameter>
+            <from-scope>trace</from-scope>
+            <name>?target-pid</name>
+        </import-parameter>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+        <create-table>
+            <id>network-connection-stat-table</id>
+            <schema-ref>axe-network-connection-stat</schema-ref>
+            <attribute>
+                <name>target-pid</name>
+                <parameter-ref>?target-pid</parameter-ref>
+            </attribute>
+        </create-table>
+        <graph>
+            <title>Network</title>
+            <lane>
+                <title>Bytes Received</title>
+                <table-ref>network-connection-stat-table</table-ref>
+                <base-color>Orange</base-color>
+                <histogram>
+                    <best-for-resolution>minutes</best-for-resolution>
+                    <nanoseconds-per-bucket>1000000000</nanoseconds-per-bucket>
+                    <sum>rx-bytes</sum>
+                </histogram>
+            </lane>
+            <lane>
+                <title>Bytes Transmitted</title>
+                <table-ref>network-connection-stat-table</table-ref>
+                <histogram>
+                    <best-for-resolution>minutes</best-for-resolution>
+                    <nanoseconds-per-bucket>1000000000</nanoseconds-per-bucket>
+                    <sum>tx-bytes</sum>
+                </histogram>
+            </lane>
+        </graph>
+        <list>
+            <title>Connection</title>
+            <table-ref>network-connection-stat-table</table-ref>
+            <column>start-time</column>
+            <column>duration</column>
+            <column>connection-serial</column>
+            <column>process</column>
+            <column>interface</column>
+            <column>protocol</column>
+            <column>local-address</column>
+            <column>remote-address</column>
+            <column>description</column>
+            <column>rx-packets</column>
+            <column>rx-bytes</column>
+            <column>tx-packets</column>
+            <column>tx-bytes</column>
+            <column>rx-dups</column>
+            <column>rx-ooo</column>
+            <column>tx-retx</column>
+            <column>min-rtt</column>
+            <column>average-rtt</column>
+        </list>
+    </instrument>
+    <instrument>
+        <id>org.axe.instruments.gpu</id>
+        <title>AXE FPS Monitor</title>
+        <category>Graphics</category>
+        <purpose>监控帧率。</purpose>
+        <icon>Core Animation</icon>
+        <limitations>
+            <disable>
+                <when-target-is>All Processes</when-target-is>
+            </disable>
+        </limitations>
+        <create-table>
+            <id>gpu-fps-table</id>
+            <schema-ref>core-animation-fps-estimate</schema-ref>
+        </create-table>
+        <graph>
+            <title>FPS</title>
+            <lane>
+                <title>FPS</title>
+                <table-ref>gpu-fps-table</table-ref>
+                <plot>
+                    <best-for-resolution>minutes</best-for-resolution>
+                    <value-from>fps</value-from>
+                    <label-from>fps</label-from>
+                </plot>
+            </lane>
+        </graph>
+        <list>
+            <title>FPS</title>
+            <table-ref>gpu-fps-table</table-ref>
+            <column>interval</column>
+            <column>period</column>
+            <column>fps</column>
+            <column>device-utilization</column>
+        </list>
+    </instrument>
+    <template>
+        <import-from-file>./AXE.tracetemplate</import-from-file>
+    </template>
+</package>
